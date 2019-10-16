@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/react-notebook/static/css/main.1da8a160.chunk.css",
-    "main.js": "/react-notebook/static/js/main.8a2dda6d.chunk.js",
-    "main.js.map": "/react-notebook/static/js/main.8a2dda6d.chunk.js.map",
+    "main.css": "/react-notebook/static/css/main.8773907b.chunk.css",
+    "main.js": "/react-notebook/static/js/main.2e11f0eb.chunk.js",
+    "main.js.map": "/react-notebook/static/js/main.2e11f0eb.chunk.js.map",
     "runtime-main.js": "/react-notebook/static/js/runtime-main.89cf968a.js",
     "runtime-main.js.map": "/react-notebook/static/js/runtime-main.89cf968a.js.map",
-    "static/js/2.3aeadfb9.chunk.js": "/react-notebook/static/js/2.3aeadfb9.chunk.js",
-    "static/js/2.3aeadfb9.chunk.js.map": "/react-notebook/static/js/2.3aeadfb9.chunk.js.map",
+    "static/js/2.928972ab.chunk.js": "/react-notebook/static/js/2.928972ab.chunk.js",
+    "static/js/2.928972ab.chunk.js.map": "/react-notebook/static/js/2.928972ab.chunk.js.map",
     "index.html": "/react-notebook/index.html",
-    "precache-manifest.e009b5b5571939ee11cae3b631e123de.js": "/react-notebook/precache-manifest.e009b5b5571939ee11cae3b631e123de.js",
+    "precache-manifest.285b60420ffaa84461865b4cfb763e79.js": "/react-notebook/precache-manifest.285b60420ffaa84461865b4cfb763e79.js",
     "service-worker.js": "/react-notebook/service-worker.js",
-    "static/css/main.1da8a160.chunk.css.map": "/react-notebook/static/css/main.1da8a160.chunk.css.map"
+    "static/css/main.8773907b.chunk.css.map": "/react-notebook/static/css/main.8773907b.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.89cf968a.js",
-    "static/js/2.3aeadfb9.chunk.js",
-    "static/css/main.1da8a160.chunk.css",
-    "static/js/main.8a2dda6d.chunk.js"
+    "static/js/2.928972ab.chunk.js",
+    "static/css/main.8773907b.chunk.css",
+    "static/js/main.2e11f0eb.chunk.js"
   ]
 }

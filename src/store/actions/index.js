@@ -1,5 +1,6 @@
 import getCookie from "../../function/getCookie";
 import writeCookie from "../../function/writeCookie";
+import { primaryTheme, darkTheme } from "../../theme";
 
 // 基本型
 export const setApp = () => {
@@ -24,18 +25,6 @@ export const fetchProduct = cbu => async dispatch => {
     .then(data => {
       console.log(data);
     });
-};
-
-const primaryTheme = {
-  background: "#FFFFFF",
-  textColor: "#000000",
-  button: "red"
-};
-
-const darkTheme = {
-  background: "#2F2F2F",
-  textColor: "#CCCCCC",
-  button: "darkred"
 };
 
 export const readThemeCookie = () => dispatch => {

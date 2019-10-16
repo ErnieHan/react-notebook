@@ -9,6 +9,28 @@ export const Content = styled.div`
   background: ${props => props.theme.navbarBackground};
   padding: 20px;
   color: ${props => props.theme.navbarTextColor};
+  z-index: 10;
+  &::after {
+    opacity: 0;
+    pointer-events: none;
+    transition: all 300ms ease;
+  }
+  @media screen and (max-width: 1200px) {
+    transform: ${props =>
+      props.menuActive ? "translateX(0%)" : "translateX(-100%)"};
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.5);
+      width: 100vw;
+      height: 1000vh;
+      z-index: -1;
+      opacity: ${props => (props.menuActive ? "1" : "0")};
+      pointer-events: ${props => (props.menuActive ? "" : "none")};
+    }
+  }
 `;
 
 export const Title = styled.div`

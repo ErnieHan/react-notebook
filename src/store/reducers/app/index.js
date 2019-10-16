@@ -1,5 +1,6 @@
 import { combineReducers } from "redux";
 import updateTheme from "./updateTheme";
+import toggleMenu from "./toggleMenu";
 
 const initialState = {
   active: true
@@ -20,7 +21,8 @@ const index = (state = initialState, action) => {
 
 const reducers = combineReducers({
   index,
-  updateTheme
+  updateTheme,
+  toggleMenu
 });
 
 export default reducers;

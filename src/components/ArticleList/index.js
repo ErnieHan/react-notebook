@@ -72,7 +72,7 @@ class ArticleList extends Component {
       }
     ];
     return (
-      <Content>
+      <Content theme={themeColors}>
         {lists.map((data, index) => (
           <Article
             key={index}

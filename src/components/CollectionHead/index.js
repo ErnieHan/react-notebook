@@ -1,16 +1,21 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { Content, Left, Right } from "./CollectionHead-css.js";
+import { Content, Left, Right, Menu } from "./CollectionHead-css.js";
 // Redux
 import { connect } from "react-redux";
-import { setApp } from "../../store/actions";
+import { toggleMenu } from "../../store/actions";
 
 export class CollectionHead extends Component {
+  handleToggle = () => {
+    // 開啟 MENU 選單
+    this.props.toggleMenu(true);
+  };
   render() {
     const { themeColors } = this.props;
     return (
       <Content theme={themeColors}>
         <Left>
+          <Menu className="fas fa-bars active" onClick={this.handleToggle} />
           <i className="fas fa-th-list active" />
           <i className="fas fa-th-large" />
         </Left>
@@ -26,7 +31,8 @@ export class CollectionHead extends Component {
 
 CollectionHead.propTypes = {
   themeName: PropTypes.string,
-  themeColors: PropTypes.object
+  themeColors: PropTypes.object,
+  toggleMenu: PropTypes.func
 };
 
 const mapStateToProps = state => ({
@@ -36,7 +42,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => {
   return {
-    setApp: () => dispatch(setApp())
+    toggleMenu: bool => dispatch(toggleMenu(bool))
   };
 };
 

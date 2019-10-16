@@ -32,6 +32,10 @@ const LanguageButton = styled.button`
 
 const Content = styled.div`
   padding-left: 250px;
+  transition: all 300ms;
+  @media screen and (max-width: 1200px) {
+    padding-left: 0;
+  }
 `;
 
 class App extends React.Component {

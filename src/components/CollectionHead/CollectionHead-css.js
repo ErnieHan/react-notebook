@@ -29,3 +29,9 @@ export const Right = styled.div`
     }
   }
 `;
+
+export const Menu = styled.i`
+  @media screen and (min-width: 1200px) {
+    display: none;
+  }
+`;

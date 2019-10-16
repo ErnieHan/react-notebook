@@ -1,9 +1,24 @@
 import styled from "styled-components";
 
 export const Content = styled.div`
-  width: calc(100% + 17px);
   overflow-y: scroll;
   height: calc(100% - 56px);
+  padding-bottom: 50px;
+  &:hover {
+    ::-webkit-scrollbar {
+      width: 3px;
+    }
+  }
+  &::-webkit-scrollbar {
+    width: 0px;
+    transition: width 300ms ease;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: ${props => props.theme.rightSection.scrollBarBackground};
+  }
+  &::-webkit-scrollbar-track {
+    background: #f7f7f7;
+  }
 `;
 
 export const Article = styled.div`

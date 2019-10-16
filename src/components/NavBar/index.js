@@ -27,9 +27,13 @@ class NavBar extends Component {
   };
 
   render() {
-    const { themeName, themeColors } = this.props;
+    const { themeName, themeColors, menuActive } = this.props;
     return (
-      <Content theme={themeColors} className="transition">
+      <Content
+        theme={themeColors}
+        menuActive={menuActive}
+        className="transition"
+      >
         <Title>
           <Logo theme={themeColors}>BLANK</Logo>
           <Label>
@@ -99,12 +103,14 @@ class NavBar extends Component {
 NavBar.propTypes = {
   changeTheme: PropTypes.func,
   themeName: PropTypes.string,
-  themeColors: PropTypes.object
+  themeColors: PropTypes.object,
+  menuActive: PropTypes.bool
 };
 
 const mapStateToProps = state => ({
   themeName: state.app.updateTheme.themeName,
-  themeColors: state.app.updateTheme.themeColors
+  themeColors: state.app.updateTheme.themeColors,
+  menuActive: state.app.toggleMenu.active
 });
 
 const mapDispatchToProps = dispatch => {

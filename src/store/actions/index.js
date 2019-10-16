@@ -63,3 +63,10 @@ export const updateTheme = (themeName, themeColors) => {
     themeColors
   };
 };
+
+export const toggleMenu = bool => {
+  return {
+    type: "TOGGLE_MENU",
+    bool
+  };
+};

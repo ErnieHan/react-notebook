@@ -1,23 +1,52 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { Content, Left, Right, Menu } from "./CollectionHead-css.js";
+import {
+  Content,
+  Left,
+  Right,
+  Menu,
+  ListButton
+} from "./CollectionHead-css.js";
 // Redux
 import { connect } from "react-redux";
 import { toggleMenu } from "../../store/actions";
 
 export class CollectionHead extends Component {
+  state = {
+    active: "large"
+  };
   handleToggle = () => {
     // 開啟 MENU 選單
     this.props.toggleMenu(true);
   };
+
+  handleChange = e => {
+    this.setState({
+      active: e.name
+    });
+  };
   render() {
     const { themeColors } = this.props;
+    const { active } = this.state;
+    const lists = [
+      { name: "large", className: "fas fa-th-list" },
+      { name: "small", className: "fas fa-th-large" }
+    ];
     return (
       <Content theme={themeColors}>
         <Left>
-          <Menu className="fas fa-bars active" onClick={this.handleToggle} />
-          <i className="fas fa-th-list active" />
-          <i className="fas fa-th-large" />
+          <Menu
+            className="fas fa-sliders-h active"
+            onClick={this.handleToggle}
+          />
+          {lists.map((data, index) => (
+            <ListButton
+              key={index}
+              className={data.className}
+              active={data.name === active}
+              onClick={() => this.handleChange(data)}
+            />
+          ))}
         </Left>
         <Right>
           <i className="fas fa-trash" />

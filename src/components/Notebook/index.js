@@ -39,21 +39,21 @@ export class Notebook extends Component {
         <Head>
           <div>
             <i
-              class="fas fa-bold"
+              className="fas fa-bold"
               onClick={() => {
                 this.toggleInlineStyle("BOLD");
               }}
             />
-            <i class="fas fa-italic" />
-            <i class="fas fa-underline" />
-            <i class="fas fa-strikethrough" />
-            <i class="fas fa-font" />
-            <i class="fas fa-cut" />
-            <i class="fas fa-copy" />
-            <i class="fas fa-list" />
-            <i class="fas fa-list-ol" />
-            <i class="fas fa-link" />
-            <i class="fas fa-code" />
+            <i className="fas fa-italic" />
+            <i className="fas fa-underline" />
+            <i className="fas fa-strikethrough" />
+            <i className="fas fa-font" />
+            <i className="fas fa-cut" />
+            <i className="fas fa-copy" />
+            <i className="fas fa-list" />
+            <i className="fas fa-list-ol" />
+            <i className="fas fa-link" />
+            <i className="fas fa-code" />
           </div>
         </Head>
         <NotebookContent className="basic">

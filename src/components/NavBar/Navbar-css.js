@@ -97,6 +97,7 @@ export const SubTitle = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.5rem;
+  cursor: pointer;
 `;
 
 export const SubLists = styled.ul`
@@ -106,6 +107,10 @@ export const SubLists = styled.ul`
     margin-left: -20px;
     margin-right: -20px;
     letter-spacing: 0.5px;
+    transition: all 300ms ease;
+    &:hover {
+      color: #ffffff;
+    }
     &[class^="active"] {
       background: ${props => props.theme.navbarListBackground};
       font-weight: bold;

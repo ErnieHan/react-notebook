@@ -4,6 +4,8 @@
   "private": true,
   "homepage": "https://erniehan.github.io/react-notebook/",
   "dependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.8.3",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
     "babel-polyfill": "^6.26.0",
     "core-js": "^3.3.2",
     "draft-js": "^0.11.1",
@@ -30,7 +32,8 @@
     "eject": "react-scripts eject",
     "deploy": "gh-pages -d build",
     "predeploy": "npm run build",
-    "server": "node ./json-server/server.js"
+    "server": "node ./json-server/server.js",
+    "jest": "jest __tests__"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -48,5 +51,15 @@
       "last 1 safari version",
       "ie 11"
     ]
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-jest": "^25.1.0",
+    "babel-plugin-styled-components": "^1.10.7",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "jest": "^25.1.0",
+    "jest-cli": "^25.1.0",
+    "jest-styled-components": "^7.0.0"
   }
 }

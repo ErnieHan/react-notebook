@@ -14,9 +14,6 @@ export const Left = styled.div`
   i {
     cursor: pointer;
     margin-right: 1.5rem;
-    &:not([class*="active"]) {
-      opacity: 0.2;
-    }
   }
 `;
 
@@ -34,4 +31,8 @@ export const Menu = styled.i`
   @media screen and (min-width: 1200px) {
     display: none;
   }
+`;
+
+export const ListButton = styled.i`
+  opacity: ${props => (props.active ? "1" : "0.2")};
 `;

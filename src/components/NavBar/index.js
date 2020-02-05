@@ -15,6 +15,10 @@ import { connect } from "react-redux";
 import { changeTheme } from "../../store/actions";
 
 class NavBar extends Component {
+  state = {
+    active: "Projects"
+  };
+
   handleChangeTheme = () => {
     const { changeTheme, themeName } = this.props;
     if (themeName === "primary") {
@@ -26,8 +30,34 @@ class NavBar extends Component {
     }
   };
 
+  handleChangeCollection = item => {
+    this.setState({
+      active: item.subtitle
+    });
+  };
+
   render() {
     const { themeName, themeColors, menuActive } = this.props;
+    const { active } = this.state;
+    const navbarLists = [
+      {
+        title: "STARRED",
+        subitems: [
+          { subtitle: "Note With Star" },
+          { subtitle: "Note With Star 2" },
+          { subtitle: "Note With Star 3" }
+        ]
+      },
+      {
+        title: "COLLECTIONS",
+        subitems: [
+          { subtitle: "Home" },
+          { subtitle: "Work" },
+          { subtitle: "Projects" }
+        ]
+      },
+      { title: "TRASH" }
+    ];
     return (
       <Content
         theme={themeColors}
@@ -45,52 +75,32 @@ class NavBar extends Component {
             <div />
           </Label>
         </Title>
-        <SubContent>
-          <SubTitle>
-            <p>STARRED</p>
-            <i className="fas fa-caret-up" />
-          </SubTitle>
-          <SubLists theme={themeColors}>
-            <li>
-              <i className="fas fa-star" />
-              Note With Star
-            </li>
-            <li>
-              <i className="fas fa-star" />
-              Note With Star 2
-            </li>
-            <li>
-              <i className="fas fa-star" />
-              Note With Star 3
-            </li>
-          </SubLists>
-        </SubContent>
-        <SubContent>
-          <SubTitle>
-            <p>COLLECTIONS</p>
-            <i className="fas fa-caret-up" />
-          </SubTitle>
-          <SubLists theme={themeColors}>
-            <li>
-              <i className="fas fa-copy" />
-              Home
-            </li>
-            <li>
-              <i className="fas fa-copy" />
-              Work
-            </li>
-            <li className="active">
-              <i className="fas fa-copy" />
-              Projects
-            </li>
-          </SubLists>
-        </SubContent>
-        <SubContent>
-          <SubTitle>
-            <p>TRASH</p>
-            <i className="fas fa-caret-up" />
-          </SubTitle>
-        </SubContent>
+        {navbarLists.map((data, index) => (
+          <SubContent key={index}>
+            <SubTitle>
+              <p>{data.title}</p>
+              <i className="fas fa-caret-up" />
+            </SubTitle>
+            <SubLists theme={themeColors}>
+              {data.subitems
+                ? data.subitems.map((item, jndex) => (
+                    <li
+                      key={jndex}
+                      className={item.subtitle === active ? "active" : null}
+                      onClick={() => this.handleChangeCollection(item)}
+                    >
+                      {data.title === "STARRED" ? (
+                        <i className="fas fa-star" />
+                      ) : (
+                        <i className="fas fa-copy" />
+                      )}
+                      {item.subtitle}
+                    </li>
+                  ))
+                : null}
+            </SubLists>
+          </SubContent>
+        ))}
         <AddNewCollection>
           <i className="fas fa-folder-plus" />
           NEW COLLECTION
